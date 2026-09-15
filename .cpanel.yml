@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/snatbur1/my.snatburialscheme.com
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R application system assets $DEPLOYPATH
+    - /bin/cp -f index.php $DEPLOYPATH/

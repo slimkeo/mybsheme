@@ -16,7 +16,7 @@ $currentPage = strtoupper($currentPage);
 <meta name="description" content="SNAT Burial Scheme provides financial and emotional support to teachers and their families in Eswatini since 2003. Dignified funeral cover, compassionate care, and trusted service.">
 
 <meta name="keywords" content="SNAT Burial Scheme, Eswatini Teachers Burial, Funeral Cover Eswatini, SNAT, Teacher Support, Burial Scheme Swaziland">
-<meta name="author" content="SNAT Burial Scheme">
+<meta name="author" content="Sicelo Thabani Hlanze">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

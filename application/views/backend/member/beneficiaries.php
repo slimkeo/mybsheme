@@ -158,6 +158,7 @@ foreach($beneficiaries as $b):
               <strong>Monthly Policy Breakdown</strong>
               <div class="text-muted small">
                 Principal Member: E<?= number_format($principal_fee, 2) ?><br>
+                Total Beneficiaries: <?php echo $total_beneficiaries; ?> <br>
                 Payable Beneficiaries (<?= $payable_beneficiaries ?> ×
                 E<?= number_format($member_fee, 2) ?>):
                 E<?= number_format($beneficiary_fee, 2) ?>

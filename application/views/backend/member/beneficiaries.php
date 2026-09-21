@@ -117,7 +117,7 @@ foreach($beneficiaries as $b):
   // Determine maturity status text and badge class
   if ($b['status'] == 'BENEFITTED' || $b['status'] == 'BENEFITTED - REPLACED'| $b['status'] == 'DECEASED - REPLACED'| $b['status'] == 'DELETED' | $b['status'] == 'LATE NOT BENEFITTED'| $b['status'] == 'LATE NOT BENEFITTED - REPLACED'| $b['status'] =='PASSBOOK REPLACEMENT') {
     $maturity_status = $b['status'];
-    $maturity_badge = 'bg-danger';
+    $badge = 'bg-danger';
   }// elseif ($b['status'] == 'REPLACEE') {
   //	$maturity_status = 'Matured';
   //	$maturity_badge = 'label-success';

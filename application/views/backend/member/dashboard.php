@@ -131,7 +131,7 @@ $claims_count = $this->db
           <h6 class="text-muted mb-2">Policy Status</h6>
           <h3 class="mb-0 text-warning">Active</h3>
           <small class="text-success">
-            Coverage: E <?= number_format($principal_payout, 2); ?>
+            Coverage: E <?= number_format($principal_fee, 2); ?>
           </small>
         </div>
       </div>

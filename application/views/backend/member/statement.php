@@ -1,8 +1,6 @@
 <?php
 $member_id = $this->session->userdata('member_id');
 
-$member_id = 1109317;
-
 // Pagination settings
 $per_page = 12;
 $page = (int) $this->input->get('page');

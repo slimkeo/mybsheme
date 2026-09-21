@@ -5,24 +5,45 @@ $member_id = $this->session->userdata('member_id');
    LOAD DATA
 ========================= */
 $beneficiaries = $this->Beneficiary_model->get_by_member($member_id);
-$summary       = $this->Beneficiary_model->get_payable_summary($member_id);
 
-$payable_beneficiaries = $summary['payable_beneficiaries'];
-$total_beneficiaries   = $summary['total_beneficiaries'];
+$summary = $this->Beneficiary_model->get_payable_summary($member_id);
 
-/* =========================
-   FEES
-========================= */
-$principal_fee = (float) $this->db
-    ->get_where('settings', ['type' => 'principal_fee'])
-    ->row()->description;
+$total_beneficiaries     = $summary['total_beneficiaries'];
+$payable_beneficiaries   = $summary['payable_beneficiaries'];
+$beneficiary_fee         = $summary['payable_beneficiary_fee'];
 
-$member_fee = (float) $this->db
-    ->get_where('settings', ['type' => 'member_fee'])
-    ->row()->description;
+$total_monthly           = $this->Beneficiary_model->get_total_monthly_fee($member_id);
 
-$beneficiary_fee = $member_fee * $payable_beneficiaries;
-$total_monthly   = $principal_fee + $beneficiary_fee;
+$fees = $this->Beneficiary_model->get_fee_settings();
+
+$principal_fee = $fees['principal_fee'];
+$member_fee    = $fees['member_fee'];
+$spouse_fee    = $fees['spouse_fee'];
+
+// For display breakdown only (members vs spouses among payable beneficiaries)
+$non_payable_statuses = [
+  'BENEFITTED - REPLACED',
+  'DECEASED - REPLACED',
+  'DELETED',
+  'LATE NOT BENEFITTED',
+  'PASSBOOK REPLACEMENT',
+  'LATE NOT BENEFITTED - REPLACED'
+];
+
+$payable_list = array_filter($beneficiaries, function($b) use ($non_payable_statuses) {
+  $status = trim($b['status'] ?? '');
+  return !in_array($status, $non_payable_statuses, true);
+});
+
+$payable_members_count = count(array_filter($payable_list, function($b) {
+  return $b['is_spouse'] == 0;
+}));
+
+$payable_spouses_count = count(array_filter($payable_list, function($b) {
+  return $b['is_spouse'] == 1;
+}));
+
+
 ?>
 
 <section class="section">
@@ -71,50 +92,47 @@ $total_monthly   = $principal_fee + $beneficiary_fee;
                 <?php foreach ($beneficiaries as $b): ?>
 
 <?php
-/* =========================
-   MATURITY STATUS (FINAL)
-========================= */
 
-$status   = strtoupper(trim($b['status']));
-$maturity = $this->Beneficiary_model->is_matured($b['id']);
-
-/* =========================
-   TERMINAL STATUSES
-========================= */
-if (
-    $status === 'BENEFITTED' ||
-    $status === 'BENEFITTED - REPLACED' ||
-    $status === 'DECEASED - REPLACED' ||
-    $status === 'DELETED'
-) {
-
-    $label = $status;
-    $badge = 'bg-danger';
-
-/* =========================
-   REPLACEE = ALWAYS MATURED
-========================= */
-} elseif ($status === 'REPLACEE') {
-
-    $label = 'Matured';
+$beneficiaries = $this->db->get_where('beneficiaries', array('memberid' => $member_row['id']))->result_array();
+$count = 1;
+foreach($beneficiaries as $b): 
+  // Calculate maturity status
+  $submission_date = $b['submission_date'];
+  
+  // Handle different date formats (dd-mm-yyyy or yyyy-mm-dd)
+  $submission_timestamp = false;
+  if (strpos($submission_date, '-') !== false) {
+    $date_parts = explode('-', $submission_date);
+    if (count($date_parts) == 3 && intval($date_parts[0]) > 12) {
+      $submission_timestamp = strtotime($submission_date);
+    } else {
+      $submission_timestamp = strtotime($date_parts[2] . '-' . $date_parts[1] . '-' . $date_parts[0]);
+    }
+  } else {
+    $submission_timestamp = strtotime($submission_date);
+  }
+  
+  $today = strtotime(date('Y-m-d'));
+  $one_year_ago = strtotime('-1 year', $today);
+  $is_matured = ($submission_timestamp && $submission_timestamp <= $one_year_ago);
+  
+  // Determine maturity status text and badge class
+  if ($b['status'] == 'BENEFITTED' || $b['status'] == 'BENEFITTED - REPLACED'| $b['status'] == 'DECEASED - REPLACED'| $b['status'] == 'DELETED' | $b['status'] == 'LATE NOT BENEFITTED'| $b['status'] == 'LATE NOT BENEFITTED - REPLACED'| $b['status'] =='PASSBOOK REPLACEMENT') {
+    $maturity_status = $b['status'];
+    $maturity_badge = 'bg-danger';
+  }// elseif ($b['status'] == 'REPLACEE') {
+  //	$maturity_status = 'Matured';
+  //	$maturity_badge = 'label-success';
+  //	$row_class = 'success';
+  //} 
+  elseif ($is_matured) {
+    $maturity_status = 'Matured';
     $badge = 'bg-success';
-
-/* =========================
-   1 YEAR RULE (MODEL)
-========================= */
-} elseif ($maturity === 'MATURED') {
-
-    $label = 'Matured';
-    $badge = 'bg-success';
-
-/* =========================
-   DEFAULT
-========================= */
-} else {
-
-    $label = 'Waiting';
+  } else {
+    $maturity_status = 'Waiting';
     $badge = 'bg-warning text-dark';
-}
+  }
+
 ?>
 
 

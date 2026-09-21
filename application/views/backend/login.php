@@ -43,7 +43,7 @@ include 'includes/header.php';
             <!-- Identifier -->
             <div class="mb-3">
               <label class="form-label fw-semibold">
-                Passbook / ID / Cell Number
+                ID Number / Cell Number
               </label>
               <input
                 type="text"

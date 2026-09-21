@@ -12,7 +12,7 @@
     <div class="d-flex align-items-center text-white flex-wrap">
       <div class="me-3 mb-1 mb-md-0">
         <i class="bi bi-geo-alt-fill me-1"></i>
-        <span class="small">P O Box 11575 Manzini</span>
+        <span class="small">P O Box 1575 Manzini</span>
       </div>
       <div>
         <i class="bi bi-telephone-fill me-1"></i>

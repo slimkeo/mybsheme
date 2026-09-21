@@ -89,11 +89,8 @@ $payable_spouses_count = count(array_filter($payable_list, function($b) {
                   </td>
                 </tr>
               <?php else: ?>
-                <?php foreach ($beneficiaries as $b): ?>
-
 <?php
 
-$beneficiaries = $this->db->get_where('beneficiaries', array('memberid' => $member_row['id']))->result_array();
 $count = 1;
 foreach($beneficiaries as $b): 
   // Calculate maturity status
@@ -149,6 +146,7 @@ foreach($beneficiaries as $b):
                   </tr>
 
                 <?php endforeach; ?>
+              <?php endif; ?>
 
               </tbody>
             </table>

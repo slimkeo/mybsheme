@@ -20,7 +20,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
 
 <section class="section">
   <div class="container">
-    <h2 class="mb-4">My 12 Months Subscriptions</h2>
+    <h2 class="mb-4">My last 12 Subscriptions</h2>
 
     <?php if(empty($statements)): ?>
       <div class="alert alert-info">You have no transactions yet.</div>
@@ -60,31 +60,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
         </table>
       </div>
 
-      <?php if ($total_pages < 0): ?>
-        <nav aria-label="Statement pagination">
-          <ul class="pagination justify-content-center mt-3">
-            <?php
-              $base_url = base_url() . 'index.php?burial/statement';
-              $prev_page = $page - 1;
-              $next_page = $page + 1;
-            ?>
 
-            <li class="page-item <?= $page <= 1 ? 'disabled' : ''; ?>">
-              <a class="page-link" href="<?= $page <= 1 ? '#' : $base_url . '&page=' . $prev_page; ?>" tabindex="-1">Previous</a>
-            </li>
-
-            <?php for($i = 1; $i <= $total_pages; $i++): ?>
-              <li class="page-item <?= $i == $page ? 'active' : ''; ?>">
-                <a class="page-link" href="<?= $base_url . '&page=' . $i; ?>"><?= $i; ?></a>
-              </li>
-            <?php endfor; ?>
-
-            <li class="page-item <?= $page >= $total_pages ? 'disabled' : ''; ?>">
-              <a class="page-link" href="<?= $page >= $total_pages ? '#' : $base_url . '&page=' . $next_page; ?>">Next</a>
-            </li>
-          </ul>
-        </nav>
-      <?php endif; ?>
     <?php endif; ?>
 
     <div class="alert alert-info mt-4">

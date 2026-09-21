@@ -4,33 +4,47 @@ $member_id = $this->session->userdata('member_id');
 /* =========================
    LOAD DATA
 ========================= */
-$beneficiaries = $this->Beneficiary_model->get_by_member($member_id);
-$summary       = $this->Beneficiary_model->get_payable_summary($member_id);
-
-$payable_beneficiaries = (int) $summary['payable_beneficiaries'];
-$total_beneficiaries   = (int) $summary['total_beneficiaries'];
-
 /* =========================
-   FEES
+   LOAD DATA
 ========================= */
-$principal_fee = (float) $this->db
-    ->get_where('settings', ['type' => 'principal_fee'])
-    ->row()->description;
+$beneficiaries = $this->Beneficiary_model->get_by_member($member_id);
 
-$member_fee = (float) $this->db
-    ->get_where('settings', ['type' => 'member_fee'])
-    ->row()->description;
+$summary = $this->Beneficiary_model->get_payable_summary($member_id);
 
-$principal_payout = (float) $this->db
-    ->get_where('settings', ['type' => 'principal_payout'])
-    ->row()->description;
+$total_beneficiaries     = $summary['total_beneficiaries'];
+$payable_beneficiaries   = $summary['payable_beneficiaries'];
+$beneficiary_fee         = $summary['payable_beneficiary_fee'];
 
-$beneficiary_payout = (float) $this->db
-    ->get_where('settings', ['type' => 'beneficiary_payout'])
-    ->row()->description;
+$total_monthly           = $this->Beneficiary_model->get_total_monthly_fee($member_id);
 
-$beneficiary_fee = $member_fee * $payable_beneficiaries;
-$total_monthly   = $principal_fee + $beneficiary_fee;
+$fees = $this->Beneficiary_model->get_fee_settings();
+
+$principal_fee = $fees['principal_fee'];
+$member_fee    = $fees['member_fee'];
+$spouse_fee    = $fees['spouse_fee'];
+
+// For display breakdown only (members vs spouses among payable beneficiaries)
+$non_payable_statuses = [
+  'BENEFITTED - REPLACED',
+  'DECEASED - REPLACED',
+  'DELETED',
+  'LATE NOT BENEFITTED',
+  'PASSBOOK REPLACEMENT',
+  'LATE NOT BENEFITTED - REPLACED'
+];
+
+$payable_list = array_filter($beneficiaries, function($b) use ($non_payable_statuses) {
+  $status = trim($b['status'] ?? '');
+  return !in_array($status, $non_payable_statuses, true);
+});
+
+$payable_members_count = count(array_filter($payable_list, function($b) {
+  return $b['is_spouse'] == 0;
+}));
+
+$payable_spouses_count = count(array_filter($payable_list, function($b) {
+  return $b['is_spouse'] == 1;
+}));
 
 /* =========================
    RECENT TRANSACTIONS (LAST 7)

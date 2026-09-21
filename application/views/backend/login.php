@@ -50,7 +50,7 @@ include 'includes/header.php';
                 id="login_identifier"
                 name="login_identifier"
                 class="form-control form-control-lg"
-                placeholder="e.g. Passbook, ID, or 76xxxxxx"
+                placeholder="970220*** or 76xxxxxx"
                 required
               >
             </div>

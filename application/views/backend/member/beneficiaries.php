@@ -1,6 +1,6 @@
 <?php
 $member_id = $this->session->userdata('member_id');
-//$member_id = 1100001;
+
 
 /* =========================
    LOAD DATA

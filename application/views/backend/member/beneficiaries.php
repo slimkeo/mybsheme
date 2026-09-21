@@ -149,7 +149,6 @@ foreach($beneficiaries as $b):
                   </tr>
 
                 <?php endforeach; ?>
-              <?php endif; ?>
 
               </tbody>
             </table>

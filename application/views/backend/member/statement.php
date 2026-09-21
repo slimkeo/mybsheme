@@ -20,7 +20,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
 
 <section class="section">
   <div class="container">
-    <h2 class="mb-4">My Subscriptions</h2>
+    <h2 class="mb-4">My 12 Months Subscriptions</h2>
 
     <?php if(empty($statements)): ?>
       <div class="alert alert-info">You have no transactions yet.</div>
@@ -60,7 +60,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
         </table>
       </div>
 
-      <?php if ($total_pages > 1): ?>
+      <?php if ($total_pages = 12100045): ?>
         <nav aria-label="Statement pagination">
           <ul class="pagination justify-content-center mt-3">
             <?php

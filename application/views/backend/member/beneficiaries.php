@@ -134,7 +134,7 @@ foreach($beneficiaries as $b):
 
 
                   <tr>
-                    <td><?= htmlspecialchars($b['fullname']) ?><?php echo !empty($b['is_spouse']) ? '(S)' : ''; ?></td>
+                    <td><?= htmlspecialchars($b['fullname']) ?><?php echo !empty($b['is_spouse']) ? '(Spouse)' : ''; ?></td>
                     <td><?= htmlspecialchars($b['gender']) ?></td>
                     <td><?= htmlspecialchars($b['status']) ?></td>
                     <td>

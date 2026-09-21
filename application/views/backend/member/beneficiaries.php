@@ -76,7 +76,6 @@ $payable_spouses_count = count(array_filter($payable_list, function($b) {
                 <tr>
                   <th>Full Name</th>
                   <th>Gender</th>
-                  <th>DOB</th>
                   <th>Status</th>
                   <th>Maturity Status</th>
                 </tr>
@@ -135,9 +134,8 @@ foreach($beneficiaries as $b):
 
 
                   <tr>
-                    <td><?= htmlspecialchars($b['fullname']) ?></td>
+                    <td><?= htmlspecialchars($b['fullname']) ?><?php echo !empty($b['is_spouse']) ? '(S)' : ''; ?></td>
                     <td><?= htmlspecialchars($b['gender']) ?></td>
-                    <td><?= htmlspecialchars($b['dob']) ?></td>
                     <td><?= htmlspecialchars($b['status']) ?></td>
                     <td>
                       <span class="badge <?= $badge ?>">

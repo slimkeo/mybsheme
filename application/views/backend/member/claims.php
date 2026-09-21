@@ -1,7 +1,7 @@
 <?php
 $member_id = $this->session->userdata('member_id');
 
-$member_id = 1109317;
+
 
 /* =========================
    LOAD CLAIMS

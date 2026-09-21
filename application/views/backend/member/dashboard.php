@@ -244,7 +244,7 @@ $claims_count = $this->db
             <strong>
               <?php
               $passbook_no = $this->session->userdata('passbook_no');
-              echo $passbook_no ? 'SNAT-' . htmlspecialchars($passbook_no) : 'N/A';
+              echo $member_id ? 'SNAT-' . htmlspecialchars($member_id) : 'N/A';
               ?>
             </strong>
           </div>

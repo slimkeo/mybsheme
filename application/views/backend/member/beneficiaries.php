@@ -141,7 +141,7 @@ foreach($beneficiaries as $b):
                     <td><?= htmlspecialchars($b['status']) ?></td>
                     <td>
                       <span class="badge <?= $badge ?>">
-                        <?= $label ?>
+                        <?= $maturity_status ?>
                       </span>
                     </td>
                   </tr>

@@ -60,7 +60,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
         </table>
       </div>
 
-      <?php if ($total_pages = 12100045): ?>
+      <?php if ($total_pages < 0): ?>
         <nav aria-label="Statement pagination">
           <ul class="pagination justify-content-center mt-3">
             <?php

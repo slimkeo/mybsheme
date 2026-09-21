@@ -18,7 +18,7 @@ $total_pages = $total_rows > 0 ? (int) ceil($total_rows / $per_page) : 1;
 
 <section class="section">
   <div class="container">
-    <h2 class="mb-4">My Statements</h2>
+    <h2 class="mb-4">My Subscriptions</h2>
 
     <?php if(empty($statements)): ?>
       <div class="alert alert-info">You have no transactions yet.</div>

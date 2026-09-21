@@ -114,7 +114,8 @@
 
     <div class="text-center mt-5">
       <a href="<?php echo base_url(); ?>index.php?burial/beneficiaries" class="btn btn-primary me-2">Manage Beneficiaries</a>
-      <a href="<?php echo base_url(); ?>index.php?burial/statement" class="btn btn-outline-secondary">View Statements</a>
+      <a href="<?php echo base_url(); ?>index.php?burial/statement" class="btn btn-outline-secondary">View Subscriptions</a>
+      <a href="<?php echo base_url(); ?>index.php?burial/claims" class="btn btn-outline-secondary">View Claims</a>
     </div>
 
   </div>

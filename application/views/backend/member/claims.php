@@ -1,8 +1,6 @@
 <?php
 $member_id = $this->session->userdata('member_id');
 
-
-
 /* =========================
    LOAD CLAIMS
 ========================= */

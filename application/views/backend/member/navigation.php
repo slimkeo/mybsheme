@@ -11,7 +11,7 @@
                 <li><a href="<?php echo base_url(); ?>index.php?burial/dashboard" class="<?= ($page_name == 'dashboard') ? 'active' : '' ?>">Dashboard</a></li>
                 <li><a href="<?php echo base_url(); ?>index.php?burial/beneficiaries" class="<?= ($page_name == 'beneficiaries') ? 'active' : '' ?>">Beneficiaries</a></li>
                 <li><a href="<?php echo base_url(); ?>index.php?burial/claims" class="<?= ($page_name == 'claims') ? 'active' : '' ?>">Claims</a></li>
-                <li><a href="<?php echo base_url(); ?>index.php?burial/statement" class="<?= ($page_name == 'statement') ? 'active' : '' ?>">Statements</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php?burial/statement" class="<?= ($page_name == 'statement') ? 'active' : '' ?>">Subscriptions</a></li>
                <?php /* <li><a href="<?php echo base_url(); ?>index.php?burial/support" class="<?= ($page_name == 'support') ? 'active' : '' ?>">Support</a></li> */ ?>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -26,13 +26,13 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/beneficiaries">Beneficiaries</a></li>
                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/policy">Policy</a></li>
-                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/statement">Statement</a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/statement">Subscriptions</a></li>
                    <?php /* <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/profile">Profile</a></li> */ ?>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-danger" href="<?php echo base_url(); ?>index.php?login/logout"><i class="bi bi-box-arrow-right me-1"></i>Logout</a></li>
                 </ul>
             </div>
-            <a class="btn-getstarted btn-outline-primary" href="<?php echo base_url(); ?>index.php?burial/payments">Pay Contribution</a>
+            <a class="btn-getstarted btn-outline-primary" href="<?php echo base_url(); ?>index.php?burial/payments">Pay Subscriptions</a>
         </div>
 
 

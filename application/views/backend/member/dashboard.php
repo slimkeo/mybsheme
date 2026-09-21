@@ -278,7 +278,7 @@ $claims_count = $this->db
           <div class="mb-3">
             <small class="text-muted d-block">Coverage Amount</small>
             <strong class="text-success">
-              E <?= number_format($principal_fee, 2); ?>
+              E <?= number_format(15000, 2); ?>
             </strong>
           </div>
 

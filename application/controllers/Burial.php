@@ -42,8 +42,8 @@ class Burial extends CI_Controller
 /********** MANAGE beneficiaries ********************/
 function beneficiaries($param1 = '', $param2 = '', $param3 = '')
 {
-    if ($this->session->userdata('user_login') == 1)
-        redirect('login', 'refresh');
+    if ($this->session->userdata('member_login') != 1)
+    redirect(base_url(), 'refresh');
 
     // CREATE MEMBER
     if ($param1 == 'add') {
@@ -113,7 +113,7 @@ function beneficiaries($param1 = '', $param2 = '', $param3 = '')
     /********** STATEMENTS DETAILS ********************/
     function statement()
     {
-        if ($this->session->userdata('user_login') == 1)
+        if ($this->session->userdata('member_login') != 1)
             redirect(base_url(), 'refresh');
 
         $page_data['page_name']  = 'statement';
@@ -123,7 +123,7 @@ function beneficiaries($param1 = '', $param2 = '', $param3 = '')
     /********** STATEMENTS DETAILS ********************/
     function payments()
     {
-        if ($this->session->userdata('user_login') == 1)
+        if ($this->session->userdata('member_login') != 1)
             redirect(base_url(), 'refresh');
 
         $page_data['page_name']  = 'payments';
@@ -133,8 +133,8 @@ function beneficiaries($param1 = '', $param2 = '', $param3 = '')
         /********** POLICY DETAILS ********************/
         function policy()
         {
-            if ($this->session->userdata('user_login') == 1)
-                redirect(base_url(), 'refresh');
+            if ($this->session->userdata('member_login') != 1)
+            redirect(base_url(), 'refresh');
     
             $page_data['page_name']  = 'policy';
             $page_data['page_title'] = 'Policy';
@@ -832,8 +832,8 @@ public function get_members()
     /********** MANAGE Claims ********************/
     function claims()
     {
-        if ($this->session->userdata('user_login') == 1)
-            redirect(base_url() . 'index.php?login', 'refresh');
+        if ($this->session->userdata('member_login') != 1)
+            redirect(base_url(), 'refresh');
 
         $page_data['page_name']  = 'claims';
         $page_data['page_title'] = "Claims";

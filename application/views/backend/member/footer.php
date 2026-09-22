@@ -12,8 +12,8 @@
             <p>SNAT Burial Scheme</p>
             <p>P O Box 2128 Manzini</p>
             <p>Eswatini</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+268 2404 1234</span></p>
-            <p><strong>Email:</strong> <span>info@snatburial.com</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+268 76298630</span></p>
+            <p><strong>Email:</strong> <span>info@snatburialscheme.com</span></p>
           </div>
         </div>
 

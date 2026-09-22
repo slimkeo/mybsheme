@@ -35,7 +35,7 @@ include 'includes/header.php';
 
           <h3 class="fw-bold mb-2">Login with OTP</h3>
           <p class="text-muted mb-4">
-            Enter your Passbook, ID, or Cell Number to receive a one-time password.
+            Enter your ID, or Cell Number to receive a one-time password.
           </p>
 
           <form id="otp-login-form" method="post">
@@ -100,12 +100,12 @@ include 'includes/header.php';
 
           </form>
 
-          <div class="text-center">
+         <!-- <div class="text-center">
             <a href="<?php echo base_url();?>index.php?login/register"
                class="btn btn-link fw-semibold">
               A teacher, not a member yet? Register here
             </a>
-          </div>
+          </div> -->
 
         </div>
       </div>

@@ -12,7 +12,7 @@
             <p>Lot 4 Tenbergen Street</p>
             <p>P O Box 2128 Manzini</p>
             <p>Eswatini</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+268 2505 6391</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+268 7629 8630</span></p>
             <p><strong>Email:</strong> <span>info@snatburialscheme.com</span></p>
           </div>
         </div>

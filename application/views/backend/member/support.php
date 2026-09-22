@@ -8,7 +8,7 @@
         </div>
         <div class="card-body p-4">
           <ul class="list-unstyled mb-3">
-            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-primary"></i>+268 2505 6391</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-primary"></i>+268 7629 8630</li>
             <li class="mb-2"><i class="bi bi-phone-fill me-2 text-primary"></i>+268 7679 3841</li>
             <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-primary"></i>info@snatburialscheme.com</li>
           </ul>

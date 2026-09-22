@@ -16,7 +16,7 @@
       </div>
       <div>
         <i class="bi bi-telephone-fill me-1"></i>
-        <span class="small">+268 2505 6391</span>
+        <span class="small">+268 7629 8630</span>
       </div>
     </div>
   </div>

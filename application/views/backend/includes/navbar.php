@@ -3,10 +3,20 @@
   <div class="container-fluid">
     <!-- Logo on the left -->
     <div class="d-flex align-items-center">
-      <a class="navbar-brand mb-0" href="<?php echo base_url(); ?>index.php">
+      <a class="navbar-brand mb-0" href="<?php echo base_url(); ?>index.php?login">
         <img src="<?php echo base_url(); ?>uploads/logo.png" alt="SNAT Burial Scheme Logo" height="40" class="d-inline-block align-top" style="max-height: 40px;">
       </a>
     </div>
+    
+    <!-- Navigation Links -->
+    <ul class="navbar-nav flex-row ms-3 me-auto">
+      <li class="nav-item me-3">
+        <a class="nav-link text-white px-0" href="<?php echo base_url(); ?>index.php?login">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white px-0" href="<?php echo base_url(); ?>index.php?login/ppolicy">Data Policy</a>
+      </li>
+    </ul>
     
     <!-- Contact info on the right -->
     <div class="d-flex align-items-center text-white flex-wrap">
@@ -21,4 +31,3 @@
     </div>
   </div>
 </nav>
-

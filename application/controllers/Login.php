@@ -28,6 +28,13 @@ class Login extends CI_Controller {
     }
 
 
+        //Default function, redirects to logged in user area
+    public function ppolicy() {
+
+
+        $this->load->view('backend/ppolicy');
+    }
+
     //Validating login from ajax request
     function validate_login($email = '', $password = '') {
         $credential = array('email' => $email, 'password' => $password);

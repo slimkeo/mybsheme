@@ -10,8 +10,6 @@ $currentPage = strtoupper($currentPage);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?php echo $currentPage.' | SNAT BURIAL SCHEME' ?></title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
 
 <meta name="description" content="SNAT Burial Scheme provides financial and emotional support to teachers and their families in Eswatini since 2003. Dignified funeral cover, compassionate care, and trusted service.">
 

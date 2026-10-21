@@ -25,8 +25,9 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/beneficiaries">Beneficiaries</a></li>
-                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/policy">Policy</a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/policy">Scheme Details</a></li>
                     <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/statement">Subscriptions</a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?login/ppolicy">Privacy Policy</a></li>
                    <?php /* <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php?burial/profile">Profile</a></li> */ ?>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-danger" href="<?php echo base_url(); ?>index.php?login/logout"><i class="bi bi-box-arrow-right me-1"></i>Logout</a></li>

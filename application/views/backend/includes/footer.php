@@ -21,6 +21,7 @@
           <h4>Quick Links</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="<?php echo base_url(); ?>index.php?login">Back to Login</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?php echo base_url(); ?>index.php?login/ppolicy">Data Policy</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="https://snatburialscheme.com" target="_blank">Visit SNAT Burial Scheme</a></li>
           </ul>
         </div>

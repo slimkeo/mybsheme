@@ -1,3 +1,11 @@
+<?php
+// login.php
+include 'includes/header.php';
+?>
+
+<body class="bg-light">
+
+<?php include 'includes/navbar.php'; ?>
 <section class="section py-5">
   <div class="container">
 
@@ -56,3 +64,7 @@
 
   </div>
 </section>
+<?php include 'includes/footer.php'; ?>
+
+
+</body>

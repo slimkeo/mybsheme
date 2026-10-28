@@ -35,6 +35,12 @@ class Login extends CI_Controller {
         $this->load->view('backend/ppolicy');
     }
 
+    public function download() {
+
+
+        $this->load->view('backend/download');
+    }
+
     //Validating login from ajax request
     function validate_login($email = '', $password = '') {
         $credential = array('email' => $email, 'password' => $password);

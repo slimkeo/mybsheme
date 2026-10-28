@@ -13,11 +13,10 @@
       <li class="nav-item me-3">
         <a class="nav-link text-white px-0" href="<?php echo base_url(); ?>index.php?login">Login</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item m-3">
         <a class="nav-link text-white px-0" href="<?php echo base_url(); ?>index.php?login/ppolicy">Data Policy</a>
       </li>
-
-      <li class="nav-item">
+      <li class="nav-item m-3">
         <a class="nav-link text-white px-0" href="<?php echo base_url(); ?>index.php?login/download">Download App</a>
       </li>
     </ul>

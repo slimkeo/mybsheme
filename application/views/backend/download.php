@@ -31,7 +31,7 @@ include 'includes/header.php';
                target="_blank" 
                rel="noopener noreferrer"
                class="d-inline-block">
-              <img src="<?php echo base_url(); ?>uploads/googleplay.svg" 
+              <img src="<?php echo base_url(); ?>uploads/googleplay.png" 
                    alt="Get it on Google Play" 
                    class="img-fluid"
                    style="max-height: 60px; width: auto;">
@@ -51,7 +51,7 @@ include 'includes/header.php';
                target="_blank" 
                rel="noopener noreferrer"
                class="d-inline-block">
-              <img src="<?php echo base_url(); ?>uploads/appstore.svg" 
+              <img src="<?php echo base_url(); ?>uploads/appstore.png" 
                    alt="Download on the App Store" 
                    class="img-fluid"
                    style="max-height: 60px; width: auto;">
